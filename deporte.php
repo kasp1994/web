@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,800,600,400' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
  <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
  <script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
  <script src="lib/responsive-nav.js" type="text/javascript"></script>
