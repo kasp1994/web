@@ -1,4 +1,8 @@
-$('.button').click(function() {
-  var idbutton=$(this).val();
+var id=1;
+function retornarId(){
+	return id;
 }
-$(location).attr('href',detalle.php); 
+function obtenerId(data){
+	id=data;
+	location="./detalle.php?id="+id;
+}

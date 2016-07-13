@@ -10,6 +10,8 @@
  <script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
  <script src="lib/responsive-nav.js" type="text/javascript"></script>
  <script src="lib/owl.carousel.js" type="text/javascript"></script>
+ <script src="js/leer-id.js"></script>
+ <script src="js/detalleDeporte.js"></script>
  <script type="text/javascript">
      $(document).ready(function() {
      
@@ -33,7 +35,11 @@
  </script>
  </head>
 <body>
-    <!----start-header----->
+    <?php
+      $id=$_GET['id'];
+      echo '<input type="hidden" id="idDetalle" value="'.$id.'">';
+    ?>
+    <!--start-header-->
      <div class="header">
          <div class="wrap">
             <div class="top-header">
@@ -41,7 +47,7 @@
                     <a href="index.html"><h1><span>China</span>ShopCL</h1></a>
                 </div>
             </div>
-            <!---start-top-nav---->
+            <!---start-top-nav-->
             
             <div class="top-nav">
                 
@@ -54,8 +60,6 @@
                          <li><a href="deporte.php">Deporte</a></li>
                          <li><a href="tecnologia.php">Tecnología</a></li>
                          <li><a href="crear-usuario.html">Registro</a></li>
-
-
                      </ul>
                </div>
                <script>
@@ -76,35 +80,15 @@
                 </div>
                 <div class="clear"> </div>
             </div>
-            <!---End-top-nav---->
+            <!---End-top-nav-->
         </div>
     </div><br>
-<?php
-
-/* Script que captura datos recibidos por POST y los guarda en una DB*/
-
-// Requerimos la clase conexión 
-require('php/conexion.php');
-
-    //Instanciamos la clase
-    $db = new Conexion();
-
-    //Capturamos los datos recibidos vía POST
-    $id = $_POST['id'];
-    echo "He recibido en el archivo.php: ".$_POST["id"];
-    
-    /* Enviamos la instrucción SQL que permite ingresar 
-    los datos a la BD en la tabla contactos */
-    $db->query("SELECT '$nombre','$imagen','$precio','$descripcion' FROM deporte WHERE 'id' LIKE '$id';");
-
-     
-     echo '<li><a href="single.html"><img src="images/'.$dato['imagen'].'" alt="" /><span>'.$dato['nombre'].'   -   $'.$dato['precio'].'</span></a><div class="button"><span><a type="button" id="'.$dato['id'].'">Ver en Detalle</a></span><br><br></div></li>';
-                                
-                       
-
-
-?>
-<!---start-footer---->
+    <div class="container">
+      <div id="detalle">
+        
+      </div>
+    </div>
+    <!--start-footer-->
           <div class="footer">
             <div class="wrap">
                  <div class="foot-nav">
@@ -119,6 +103,6 @@ require('php/conexion.php');
             <div class="clear"> </div>
         </div>
     </div>
-         <!---End-footer---->
+         <!--End-footer-->
     </body>
 </html>

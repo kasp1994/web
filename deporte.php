@@ -14,6 +14,7 @@
  <script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
  <script src="lib/responsive-nav.js" type="text/javascript"></script>
  <script src="lib/owl.carousel.js" type="text/javascript"></script>
+ <script src="js/leer-id.js"></script>
  <script type="text/javascript">
 	 $(document).ready(function() {
 	 
@@ -37,7 +38,7 @@
  </script>
  </head>
 <body>
-	<!----start-header----->
+	<!--start-header-->
 	 <div class="header">
 	     <div class="wrap">
 			<div class="top-header">
@@ -45,7 +46,7 @@
 					<a href="index.html"><h1><span>China</span>ShopCL</h1></a>
 				</div>
 			</div>
-			<!---start-top-nav---->
+			<!---start-top-nav-->
 			
 			<div class="top-nav">
 				
@@ -80,7 +81,7 @@
 				</div>
 				<div class="clear"> </div>
 			</div>
-			<!---End-top-nav---->
+			<!---End-top-nav-->
 		</div>
 	</div><br>
 
@@ -102,25 +103,36 @@
 								$dato = $db->recorrer($sql);
 								$var=$dato['id'];
 	                                //Imprimimos los datos obtenidos    
-								echo '<tr id="fila_'.$dato['id'].'">';
-								echo '<li><a href="single.html"><img src="images/'.$dato['imagen'].'" alt="" /><span>'.$dato['nombre'].'   -   $'.$dato['precio'].'</span></a><div type="button" class="button" id="boton" href="detalle.php" onclick="enviar()" value="'.$dato['id'].'"><span><a>Ver en Detalle</a></span><br><br></div></li>';
+								echo '<li>
+										<a><img src="images/'.$dato['imagen'].'" alt="" />
+										<span>'
+											.$dato['nombre'].
+											'   -   $'.$dato['precio'].
+										'</span>
+										</a>
+											<div class="button boton"  onclick=obtenerId("'.$dato['id'].'")>
+											<span><a >Ver en Detalle</a></span><br><br>
+											</div>
+									 </li>';
 								
 							}
 						}
 						?>
+						
 						<script type="text/javascript">
-								function enviar(){
-									$('.button').click(function() {
-  										var idbutton=$(this).val();
-									
+								
+
+								/*$(function(){
+									$('.boton').click(function() {
+  										var idbutton= $(this).val();
+										console.log('id : '+idbutton);
 
 										// Enviamos la variable de javascript a detalle.php
-										$.post("detalle.php",{"id":idbutton};
-										}
-								}
+										//$.post("detalle.php",{"id":idbutton};
+										});
+								});*/								
 								
 						</script>
-
 						
 						<div class="clear"></div>
 					</ul>
@@ -134,7 +146,7 @@
 		     
 			</div>
 		  </div>		   
-<!---start-footer---->
+<!---start-footer-->
 		  <div class="footer">
 		    <div class="wrap">
 		    	 <div class="foot-nav">
@@ -149,7 +161,7 @@
 			<div class="clear"> </div>
 		</div>
 	</div>
-		 <!---End-footer---->
+		 <!---End-footer-->
 	</body>
 </html>
 
