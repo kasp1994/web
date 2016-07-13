@@ -52,10 +52,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!---start-top-nav---->
 			<div class="row"> 
 					<div class=col-md-9 > </div>
-					<div class=col-md-3 ><a type="button"  class="botonlogin btn-default" data-toggle="modal" href="#myModal">Iniciar Sesión</a></div>
+					<div class=col-md-3 ><a type="button"  class="botonlogin btn-default" data-toggle="modal" href="#myModal" data-target=".bd-example-modal-sm">Iniciar Sesión</a></div>
 			</div>
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    			<div class="modal-dialog">
+			<div class="modal fade bd-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    			<div class="modal-dialog modal-sm">
       				<div class="modal-content">
         				<div class="modal-header">
          					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -64,19 +64,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         			<div class="modal-body">
 					<div class="container">
 				    <div class="row">
-				        <div class="col-sm-6 col-md-4">
-				            <h1 class="text-center login-title">Sign in to continue to Bootsnipp</h1>
+				        <div class="col-sm-6 col-sm-3">
+				            <h1 class="text-left login-title">Sign in</h1>
 				            <div class="account-wall">
 				                <form class="form-signin">
 				                <input type="text" class="form-control" placeholder="Email" required autofocus>
 				                <input type="password" class="form-control" placeholder="Password" required>
 				                <button class="btn btn-lg btn-primary btn-block" type="submit">
 				                    Sign in</button>
-				                <label class="checkbox pull-left">
+				                <label class="checkbox pull-center">
 				                    <input type="checkbox" value="remember-me">
 				                    Remember me
-				                </label>
-				                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+				                </label><br><br>
+				                <a href="#" class="pull-center need-help">Need help? </a><span class="clearfix"></span>
 				                </form>
 				            </div>
 				            <a href="#" class="text-center new-account">Create an account </a>
@@ -84,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				    </div>
 				</div>
             </div>
-            <a href="#" class="text-center new-account">Create an account </a>
+            
       			</div><!-- /.modal-content -->
     		</div><!-- /.modal-dialog -->
   			</div><!-- /.modal -->
