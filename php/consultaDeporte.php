@@ -8,6 +8,7 @@ require('conexion.php');
 
     //Instanciamos la clase
     $db = new Conexion();
+    session_start();
 
     //Capturamos los datos recibidos vía POST
     $id = $_GET['id'];  

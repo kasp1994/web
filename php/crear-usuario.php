@@ -7,7 +7,7 @@ require('conexion.php');
 
     //Instanciamos la clase
     $db = new Conexion();
-
+    session_start();
     //Capturamos los datos recibidos vía POST
     $rut = $_POST['in_rut'];
     $nombre = $_POST['in_nombre'];

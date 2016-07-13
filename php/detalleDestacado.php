@@ -13,7 +13,7 @@ require('conexion.php');
     $id = $_GET['id'];  
     /* Enviamos la instrucción SQL que permite ingresar 
     los datos a la BD en la tabla contactos */
-    $sql=$db->query("SELECT * FROM tecnologia WHERE id LIKE '$id';");
+    $sql=$db->query("SELECT * FROM destacados WHERE id LIKE '$id';");
     $dato=$db->recorrer($sql);
     #header('Content-Type: application/json');
     #echo json_encode(array('exito'=>true, 'rut'=>$var));
@@ -21,7 +21,15 @@ require('conexion.php');
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+ <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,800,600,400' rel='stylesheet' type='text/css'>
  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+ <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
+ <script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
+ <script src="lib/responsive-nav.js" type="text/javascript"></script>
+ <script src="lib/owl.carousel.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
@@ -30,7 +38,7 @@ echo '<div class="container-fluid">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4"><img src="images/'.$dato['imagen'].'"></div>
-        <div class="col-md-6"><h3>'.$dato['nombre'].'</h3><h4>Precio: $'.$dato['precio'].'</h4><br><h4>Descripción: '.$dato['descripcion'].'</h4></div>
+        <div class="col-md-6"><h3>'.$dato['nombre'].'</h3><h4>Precio: $'.$dato['precio'].'</h4><br><h3>Color: '.$dato['color'].'</h3><br><h3>Talla: '.$dato['talla'].'</h3><br><h4>Descripción: '.$dato['descripcion'].'</h4></div>
       </div>
 
     </div>

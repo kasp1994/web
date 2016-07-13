@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-07-2016 a las 04:04:07
+-- Tiempo de generación: 13-07-2016 a las 19:45:55
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -70,6 +70,35 @@ INSERT INTO `deporte` (`id`, `nombre`, `marca`, `precio`, `descripcion`, `imagen
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `destacados`
+--
+
+CREATE TABLE IF NOT EXISTS `destacados` (
+`id` int(5) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `marca` varchar(50) NOT NULL,
+  `color` varchar(15) NOT NULL,
+  `talla` varchar(15) NOT NULL,
+  `precio` float NOT NULL,
+  `descripcion` text NOT NULL,
+  `imagen` varchar(15) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `destacados`
+--
+
+INSERT INTO `destacados` (`id`, `nombre`, `marca`, `color`, `talla`, `precio`, `descripcion`, `imagen`) VALUES
+(1, 'Vestido Flores Marquis', 'Marquis', 'Flores', 'M', 19990, 'Vestido primaveral 70% textil, 30% algodón', '4.jpg'),
+(2, 'Blusa Opposite', 'Opposite', 'blanco', 'S', 14990, 'Blusa con flecos', '5.jpg'),
+(3, 'Sombrero Alaniz', 'Alaniz', 'Azul Marino', 'XS', 3990, 'Sombrero amplio con protección UV', '6.jpg'),
+(4, 'Bikinni Crochet Wados', 'Wados', 'Damasco', 'L', 25000, 'Bikinni tejido a crochet con protección UV', '7.jpg'),
+(5, 'Jardinera Jeans Barbados', 'Barbados', 'Jeans', 'M', 21670, 'Jardinera temporada primavera-verano.', '8.jpg'),
+(6, 'Polera Detalles Alaniz', 'Alaniz', 'blanco', 'XL', 20190, 'Polera con detalles.', '9.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `productoshombre`
 --
 
@@ -107,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `productosmujer` (
   `precio` float NOT NULL,
   `descripcion` text,
   `imagen` varchar(50) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Volcado de datos para la tabla `productosmujer`
@@ -160,6 +189,12 @@ ALTER TABLE `deporte`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `destacados`
+--
+ALTER TABLE `destacados`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `productoshombre`
 --
 ALTER TABLE `productoshombre`
@@ -187,6 +222,11 @@ ALTER TABLE `tecnologia`
 ALTER TABLE `deporte`
 MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT de la tabla `destacados`
+--
+ALTER TABLE `destacados`
+MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
 -- AUTO_INCREMENT de la tabla `productoshombre`
 --
 ALTER TABLE `productoshombre`
@@ -195,7 +235,7 @@ MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT de la tabla `productosmujer`
 --
 ALTER TABLE `productosmujer`
-MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `tecnologia`
 --

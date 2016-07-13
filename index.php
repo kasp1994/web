@@ -183,10 +183,9 @@
 								else{echo '<br><tr id="fila_'.$dato['id'].'">';}
 								echo '<li>
 										<a><img src="images/'.$dato['imagen'].'" alt="" />
-										<span>'
-											.$dato['nombre'].
-											'   -   $'.$dato['precio'].
-										'</span>
+										<span>
+											Producto Destacado
+										</span>
 										</a>
 											<div class="button boton"  onclick=obtenerId("'.$dato['id'].'")>
 											<span><a >Ver en Detalle</a></span><br><br>

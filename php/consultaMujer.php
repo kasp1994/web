@@ -8,7 +8,7 @@ require('conexion.php');
 
     //Instanciamos la clase
     $db = new Conexion();
-
+    session_start();
     //Capturamos los datos recibidos vía POST
     $id = $_GET['id'];  
     /* Enviamos la instrucción SQL que permite ingresar 
@@ -32,7 +32,7 @@ echo '<div class="container-fluid">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4"><img src="images/'.$dato['imagen'].'"></div>
-        <div class="col-md-6"><h3>'.$dato['nombre'].'</h3><h4>Precio: $'.$dato['precio'].'</h4><br><h3>Color: '.$dato['color'].'</h3><br><h3>Talla: '.$dato['talla'].'</h3><br><h4>Descripción: '.$dato['descripcion'].'</h4></div>
+        <div class="col-md-6"><h3>'.$dato['nombre'].'</h3><h4>Precio: $'.$dato['precio'].'</h4><br><h4>Color: '.$dato['color'].'</h4><br><h4>Talla: '.$dato['talla'].'</h4><br><h4>Descripción: '.$dato['descripcion'].'</h4></div>
       </div>
 
     </div>

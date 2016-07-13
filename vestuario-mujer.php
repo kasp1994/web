@@ -1,6 +1,7 @@
 <?php
 	require('php/conexion.php');
 	$db= new Conexion();
+	session_start();
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -10,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,800,600,400' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
  <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
  <script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
  <script src="lib/responsive-nav.js" type="text/javascript"></script>
@@ -47,7 +49,40 @@
 				</div>
 			</div>
 			<!---start-top-nav---->
-			
+			<div class="row"> 
+					<div class=col-md-9 > </div>
+					<div class=col-md-3 ><a type="button"  class="botonlogin btn-default" data-toggle="modal" href="#myModal" data-target=".bd-example-modal-sm">Iniciar Sesión</a></div>
+			</div>
+			<div class="modal fade bd-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    			<div class="modal-dialog modal-sm">
+      				<div class="modal-content">
+        				<div class="modal-header">
+         					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+         					<h4 class="text-left login-title">Ingreso al Sitio</h4>
+        				</div>
+        			<div class="modal-body">
+					<div class="container">
+				    <div class="row">
+				        <div class="col-sm-6 col-sm-3">
+				            <div class="account-wall">
+				                <form class="form-signin" action="php/login.php"  method="POST">
+				                <input type="text" name="email" id="email" class="form-control" placeholder="Email" required autofocus nametitle="se necesita un nombre" required="required"="email">
+				                <input type="password" name="clave1" id="clave1" class="form-control" placeholder="Password" required nametitle="se necesita un nombre" required="required"="clave1"><br>
+				                <button class="btn btn-lg btn-primary btn-block" type="submit">
+				                    Sign in</button><br>
+				                
+				                <a href="#" class="pull-center need-help">¿Olvidó su usuario o contraseña? </a><span class="clearfix"></span>
+				                </form>
+				            </div>
+				            <a href="crear-usuario.html" class="text-center new-account">Crear una cuenta</a>
+				        </div>
+				    </div>
+				</div>
+            </div>
+            
+      			</div><!-- /.modal-content -->
+    		</div><!-- /.modal-dialog -->
+  			</div><!-- /.modal -->
 			<div class="top-nav">
 				
 				<div class="top-nav-left">
@@ -150,5 +185,6 @@
 		</div>
 	</div>
 		 <!---End-footer---->
+		 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</body>
 </html>
