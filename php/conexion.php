@@ -7,7 +7,7 @@ class Conexion extends mysqli {
         // Requerimos el constructor de la clase padre (mysqli)
         /* Enviamos por parámetros la dirección del servidor, 
         nombre de usuario, contraseña y nombre base de datos.*/
-        parent::__construct('localhost','root','123','db_tienda');
+        parent::__construct('localhost','root','','db_tienda');
         //Indicamos la codificación de caracteres con la que vamos a trabajar
         $this->query("SET NAMES 'utf8';");
         /* Verificamos el estado de la conexión.

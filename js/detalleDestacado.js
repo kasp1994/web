@@ -5,7 +5,7 @@
 	});
 	console.log(id);
 	$(document).ready(function(){
-	 $.get('./php/consultaDeporte.php?id='+id,
+	 $.get('./php/consultaDestacado.php?id='+id,
 	      function(data){
 	        console.log(data);
 	        $('#detalle').append(data);

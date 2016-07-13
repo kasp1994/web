@@ -10,8 +10,8 @@
  <script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
  <script src="lib/responsive-nav.js" type="text/javascript"></script>
  <script src="lib/owl.carousel.js" type="text/javascript"></script>
- <script src="js/leer-id.js"></script>
- <script src="js/detalleDeporte.js"></script>
+ <script src="js/leer-id-destacado.js"></script>
+ <script src="js/detalleDestacado.js"></script>
  <script type="text/javascript">
      $(document).ready(function() {
      
@@ -44,7 +44,7 @@
          <div class="wrap">
             <div class="top-header">
                 <div class="logo">
-                    <a href="index.html"><h1><span>China</span>ShopCL</h1></a>
+                    <a href="index.php"><h1><span>China</span>ShopCL</h1></a>
                 </div>
             </div>
             <!---start-top-nav-->
@@ -54,7 +54,7 @@
                 <div class="top-nav-left">
                      <div id="nav">
                       <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="vestuario-mujer.php">Vestuario Mujer</a></li>
                          <li><a href="vestuario-hombre.php">Vestuario Hombre</a></li>
                          <li><a href="deporte.php">Deporte</a></li>
@@ -93,7 +93,7 @@
             <div class="wrap">
                  <div class="foot-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 </div>      

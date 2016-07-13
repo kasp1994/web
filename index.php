@@ -16,6 +16,7 @@
  <script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
  <script src="lib/responsive-nav.js" type="text/javascript"></script>
  <script src="lib/owl.carousel.js" type="text/javascript"></script>
+ <script src="js/leer-id-destacado.js"></script>
 
  <script type="text/javascript">
 	 $(document).ready(function() {
@@ -88,7 +89,7 @@
 				<div class="top-nav-left">
 					 <div id="nav">
 				      <ul>
-				        <li class="active"><a href="index.html">Home</a></li>
+				        <li class="active"><a href="index.php">Home</a></li>
 				        <li><a href="vestuario-mujer.php">Vestuario Mujer</a></li>
 				         <li><a href="vestuario-hombre.php">Vestuario Hombre</a></li>
 				         <li><a href="deporte.php">Deporte</a></li>
@@ -180,7 +181,17 @@
 									echo '<tr id="fila_'.$dato['id'].'"><br><br><br><br>';
 								}
 								else{echo '<br><tr id="fila_'.$dato['id'].'">';}
-								echo '<li><a href="single.html"><img src="images/'.$dato['imagen'].'" alt="" /><span>Producto Destacado</span></a><div type="button" class="button" id="boton" href="detalle.php" onclick="enviar()" value="'.$dato['id'].'"><span><a>Ver en Detalle</a></span><br><br></div></li>';
+								echo '<li>
+										<a><img src="images/'.$dato['imagen'].'" alt="" />
+										<span>'
+											.$dato['nombre'].
+											'   -   $'.$dato['precio'].
+										'</span>
+										</a>
+											<div class="button boton"  onclick=obtenerId("'.$dato['id'].'")>
+											<span><a >Ver en Detalle</a></span><br><br>
+											</div>
+									 </li>';
 								
 							}
 						}
@@ -205,7 +216,7 @@
 		    <div class="wrap">
 		    	 <div class="foot-nav">
 			   	<ul>
-			   		<li><a href="index.html">Home</a></li>
+			   		<li><a href="index.php">Home</a></li>
 			   		<li><a href="contact.html">Contact</a></li>
 			   	</ul>
 			   	</div>		

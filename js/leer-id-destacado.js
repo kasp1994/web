@@ -4,5 +4,5 @@ function retornarId(){
 }
 function obtenerId(data){
 	id=data;
-	location="./detalleDeporte.php?id="+id;
+	location="./detalleDestacado.php?id="+id;
 }
