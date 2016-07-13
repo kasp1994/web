@@ -1,9 +1,8 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
+<?php
+	require('php/conexion.php');
+	$db= new Conexion();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -66,9 +65,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				    <div class="row">
 				        <div class="col-sm-6 col-sm-3">
 				            <div class="account-wall">
-				                <form class="form-signin">
-				                <input type="text" class="form-control" placeholder="Email" required autofocus>
-				                <input type="password" class="form-control" placeholder="Password" required><br>
+				                <form class="form-signin" action="php/login.php"  method="POST">
+				                <input type="text" name="email" id="email" class="form-control" placeholder="Email" required autofocus nametitle="se necesita un nombre" required="required"="email">
+				                <input type="password" name="clave1" id="clave1" class="form-control" placeholder="Password" required nametitle="se necesita un nombre" required="required"="clave1"><br>
 				                <button class="btn btn-lg btn-primary btn-block" type="submit">
 				                    Sign in</button><br>
 				                
@@ -160,13 +159,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		       		<div class="col_1_3 team-members">
 					<ul><br>
 						<li></li>
-						<li><a href="single.html"><img src="images/mujer-vestidos.jpg" alt="" /><span>Producto Destacado</span></a><div class="button btn-agregarCarrito"><span><a href="services.html">Ver en Detalle</a></span><br><br></div></li>
-						<li><a href="single.html"><img src="images/mujer-camisas.jpg" alt="" /><span>Producto Destacado</span></a><div class="button btn-agregarCarrito"><span><a href="services.html">Ver en Detalle</a></span><br><br></div></li>
-						<li><a href="single.html"><img src="images/mujer-complementos.jpg" alt="" /><span>Producto Destacado</span></a><div class="button btn-agregarCarrito"><span><a href="services.html">Ver en Detalle</a></span><br><br><br><br><br><br><br><br><br><br><br><br></div></li>
-						<li><a href="single.html"><img src="images/mujer-bikinis.jpg" alt="" /><span>Producto Destacado</span></a><div class="button btn-agregarCarrito"><span><a href="services.html">Ver en Detalle</a></span></div></li>
-						<li><a href="single.html"><img src="images/mujer-monos.jpg" alt="" /><span>Producto Destacado</span></a><div class="button btn-agregarCarrito" ><span><a href="services.html">Ver en Detalle</a></span></div><br></li>
-						<li><a href="single.html"><img src="images/mujer-jerseis.jpg" alt="" /><span>Producto Destacado</span></a><div class="button btn-agregarCarrito"><span><a href="services.html">Ver en Detalle</a></span></div></li>
+						<?php 
 
+	                        // Instrucción SQL que permite rescatar todos los datos de la tabla contactos
+						$sql = $db->query("select * from destacados;");
+	                        // Obtenemos el número de filas del conjunto seleccionado
+						$nfilas = $db->rows($sql);
+	                        // Si la cantidad de filas es mayor a cero podemos proceder
+						if ($nfilas > 0){
+							for ($i=0; $i<$nfilas; $i++) {
+	                                // Obtenemos fila en formato arreglo
+								$dato = $db->recorrer($sql);
+								$var=$dato['id'];
+	                                //Imprimimos los datos obtenidos
+	                            if ( $i==1) {
+	                            	
+	                                echo '<tr id="fila_'.$dato['id'].'"><br><br><br><br><br><br>';
+									
+								}elseif($i==2){
+									echo '<tr id="fila_'.$dato['id'].'"><br><br><br><br>';
+								}
+								else{echo '<br><tr id="fila_'.$dato['id'].'">';}
+								echo '<li><a href="single.html"><img src="images/'.$dato['imagen'].'" alt="" /><span>Producto Destacado</span></a><div type="button" class="button" id="boton" href="detalle.php" onclick="enviar()" value="'.$dato['id'].'"><span><a>Ver en Detalle</a></span><br><br></div></li>';
+								
+							}
+						}
+						?>
 						
 						
 						<div class="clear"></div>

@@ -52,7 +52,7 @@
 				<div class="top-nav-left">
 					 <div id="nav">
 				      <ul>
-				        <li ><a href="index.html">Home</a></li>
+				        <li ><a href="index.php">Home</a></li>
 				        <li><a href="vestuario-mujer.php">Vestuario Mujer</a></li>
 				         <li class="active"><a href="vestuario-hombre.html">Vestuario Hombre</a></li>
 				         <li><a href="deporte.php">Deporte</a></li>
