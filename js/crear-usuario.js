@@ -2,7 +2,7 @@
 
 $('#ingresoUsuario').submit(function(event){
 	event.preventDefault();
-	$.post('crear-usuario.php', 
+	$.post('../php/crear-usuario.php', 
 		$('#ingresoUsuario').serialize(),
 			function(response){
 				if(response.return){
